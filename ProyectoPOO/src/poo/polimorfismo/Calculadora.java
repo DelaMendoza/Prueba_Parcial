@@ -40,17 +40,17 @@ public class Calculadora {
     // ── Versiones sobrecargadas de calcularArea() ────────────────────────────
 
     public double calcularArea(double lado) {
-        System.out.println("  calcularArea(lado) → cuadrado");
+        System.out.println("  calcularArea(lado) -> cuadrado");
         return lado * lado;
     }
 
     public double calcularArea(double base, double altura) {
-        System.out.println("  calcularArea(base, altura) → rectángulo");
+        System.out.println("  calcularArea(base, altura) -> rectangulo");
         return base * altura;
     }
 
     public double calcularArea(double radio, boolean esCirculo) {
-        System.out.println("  calcularArea(radio, bool) → círculo");
+        System.out.println("  calcularArea(radio, bool) -> circulo");
         return Math.PI * radio * radio;
     }
 }

@@ -7,21 +7,11 @@
     <property file="nbproject/private/private.properties"/>
     <property file="nbproject/project.properties"/>
 
-    <target name="-init-macrodef-javac">
-        <macrodef name="javac">
-            <attribute name="srcdir" default="${src.dir}"/>
-            <attribute name="destdir" default="${build.classes.dir}"/>
-            <sequential>
-                <mkdir dir="@{destdir}"/>
-                <javac srcdir="@{srcdir}" destdir="@{destdir}"
-                       source="${javac.source}" target="${javac.target}"
-                       includeantruntime="false"/>
-            </sequential>
-        </macrodef>
-    </target>
-
-    <target name="compile" depends="-init-macrodef-javac">
-        <javac/>
+    <target name="compile">
+        <mkdir dir="${build.classes.dir}"/>
+        <javac srcdir="${src.dir}" destdir="${build.classes.dir}"
+               release="${javac.source}"
+               includeantruntime="false"/>
     </target>
 
     <target name="run" depends="compile">

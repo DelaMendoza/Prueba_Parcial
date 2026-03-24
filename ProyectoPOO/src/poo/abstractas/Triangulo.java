@@ -13,7 +13,7 @@ public class Triangulo extends FiguraGeometrica {
 
     // ── Constructor ──────────────────────────────────────────────────────────
     public Triangulo(String color, double ladoA, double ladoB, double ladoC) {
-        super("Triángulo", color);
+        super("Triangulo", color);
         this.ladoA = ladoA;
         this.ladoB = ladoB;
         this.ladoC = ladoC;
@@ -47,7 +47,7 @@ public class Triangulo extends FiguraGeometrica {
 
     @Override
     public void dibujar() {
-        System.out.println("\n  Dibujando Triángulo de lados "
+        System.out.println("\n  Dibujando Triangulo de lados "
                 + ladoA + ", " + ladoB + ", " + ladoC + ":");
         System.out.println("        *        ");
         System.out.println("       * *       ");

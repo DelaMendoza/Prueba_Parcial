@@ -11,7 +11,7 @@ public class Circulo extends FiguraGeometrica {
 
     // ── Constructor ──────────────────────────────────────────────────────────
     public Circulo(String color, double radio) {
-        super("Círculo", color);
+        super("Circulo", color);
         this.radio = radio;
     }
 
@@ -22,7 +22,7 @@ public class Circulo extends FiguraGeometrica {
         if (radio > 0) {
             this.radio = radio;
         } else {
-            System.out.println("Radio inválido: " + radio);
+            System.out.println("Radio invalido: " + radio);
         }
     }
 
@@ -46,7 +46,7 @@ public class Circulo extends FiguraGeometrica {
 
     @Override
     public void dibujar() {
-        System.out.println("\n  Dibujando Círculo de radio " + radio + ":");
+        System.out.println("\n  Dibujando Circulo de radio " + radio + ":");
         System.out.println("      ***      ");
         System.out.println("   *       *   ");
         System.out.println("  *         *  ");

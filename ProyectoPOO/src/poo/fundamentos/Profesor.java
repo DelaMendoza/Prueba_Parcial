@@ -47,7 +47,7 @@ public class Profesor extends Persona {
         if (salario >= 0) {
             this.salario = salario;
         } else {
-            System.out.println("Salario inválido: " + salario);
+            System.out.println("Salario invalido: " + salario);
         }
     }
 
@@ -55,9 +55,9 @@ public class Profesor extends Persona {
     @Override
     public void presentarse() {
         super.presentarse();   // reutiliza la presentación del padre
-        System.out.println("  → Soy profesor | Código: " + codigoProfesor
+        System.out.println("  -> Soy profesor | Codigo: " + codigoProfesor
                 + " | Departamento: " + departamento
-                + " | Título: "       + titulo);
+                + " | Titulo: "       + titulo);
     }
 
     /**

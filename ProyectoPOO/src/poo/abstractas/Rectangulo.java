@@ -12,7 +12,7 @@ public class Rectangulo extends FiguraGeometrica {
 
     // ── Constructor ──────────────────────────────────────────────────────────
     public Rectangulo(String color, double base, double altura) {
-        super("Rectángulo", color);
+        super("Rectangulo", color);
         this.base   = base;
         this.altura = altura;
     }
@@ -23,12 +23,12 @@ public class Rectangulo extends FiguraGeometrica {
 
     public void setBase(double base) {
         if (base > 0) this.base = base;
-        else System.out.println("Base inválida: " + base);
+        else System.out.println("Base invalida: " + base);
     }
 
     public void setAltura(double altura) {
         if (altura > 0) this.altura = altura;
-        else System.out.println("Altura inválida: " + altura);
+        else System.out.println("Altura invalida: " + altura);
     }
 
     // ── Métodos sobreescritos ────────────────────────────────────────────────
@@ -44,7 +44,7 @@ public class Rectangulo extends FiguraGeometrica {
 
     @Override
     public void dibujar() {
-        System.out.println("\n  Dibujando Rectángulo de base " + base + " y altura " + altura + ":");
+        System.out.println("\n  Dibujando Rectangulo de base " + base + " y altura " + altura + ":");
         System.out.println("  +------------+");
         System.out.println("  |            |");
         System.out.println("  |            |");

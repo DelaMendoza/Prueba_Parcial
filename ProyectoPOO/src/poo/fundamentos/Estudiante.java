@@ -59,8 +59,8 @@ public class Estudiante extends Persona {
     @Override
     public void presentarse() {
         super.presentarse();   // reutiliza la presentación del padre
-        System.out.println("  → Soy estudiante de " + carrera
-                + " | Código: "   + codigoEstudiante
+        System.out.println("  -> Soy estudiante de " + carrera
+                + " | Codigo: "   + codigoEstudiante
                 + " | Semestre: " + semestre
                 + " | Promedio: " + promedio);
     }
