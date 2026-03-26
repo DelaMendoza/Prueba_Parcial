@@ -8,46 +8,69 @@ public class Persona {
     // Atributos privados (Encapsulación)
     private String nombre;
     private String apellido;
-    private int    edad;
+    private int edad;
     private String identificacion;
 
     // ── Constructor por defecto ──────────────────────────────────────────────
     public Persona() {
-        this.nombre         = "Sin nombre";
-        this.apellido       = "Sin apellido";
-        this.edad           = 0;
+        this.nombre = "Sin nombre";
+        this.apellido = "Sin apellido";
+        this.edad = 0;
         this.identificacion = "000";
     }
 
     // ── Constructor con parámetros ───────────────────────────────────────────
     public Persona(String nombre, String apellido, int edad, String identificacion) {
-        this.nombre         = nombre;
-        this.apellido       = apellido;
-        this.edad           = edad;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad = edad;
         this.identificacion = identificacion;
     }
 
     // ── Getters ──────────────────────────────────────────────────────────────
-    public String getNombre()         { return nombre; }
-    public String getApellido()       { return apellido; }
-    public int    getEdad()           { return edad; }
-    public String getIdentificacion() { return identificacion; }
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public String getIdentificacion() {
+        return identificacion;
+    }
 
     // ── Setters ──────────────────────────────────────────────────────────────
-    public void setNombre(String nombre)               { this.nombre = nombre; }
-    public void setApellido(String apellido)           { this.apellido = apellido; }
-    public void setIdentificacion(String identificacion) { this.identificacion = identificacion; }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public void setIdentificacion(String identificacion) {
+        this.identificacion = identificacion;
+    }
 
     /**
-     * TODO #1 — setEdad con validación
+     * TODO #1 — setEdad con validación HECHO
      *
-     * Completa este setter:
-     *   - Si la edad está entre 0 y 120 (inclusive), asígnala a this.edad.
-     *   - Si NO es válida, imprime: "Edad inválida: <valor>"
+     * Completa este setter: - Si la edad está entre 0 y 120 (inclusive),
+     * asígnala a this.edad. - Si NO es válida, imprime: "Edad inválida: valor"
+     *
+     * @param edad
      */
     public void setEdad(int edad) {
-        // ── ESCRIBE TU CÓDIGO AQUÍ ──────────────────────────────────────────
-
+        if (edad > 0 && edad <= 120) {
+            this.edad = edad;
+        } else {
+            System.err.println("Edad invalidada:" + edad);
+        }
     }
 
     // ── Métodos ──────────────────────────────────────────────────────────────
@@ -56,16 +79,16 @@ public class Persona {
     }
 
     /**
-     * TODO #2 — presentarse()
+     * TODO #2 — presentarse() HECHO
      *
-     * Completa este método. Debe imprimir exactamente:
-     *   "Hola, soy <nombreCompleto> | ID: <identificacion> | Edad: <edad>"
+     * Completa este método. Debe imprimir exactamente: "Hola, soy
+     * nombreCompleto | ID: identificacion | Edad: edad"
      *
-     * Pista: usa getNombreCompleto() para obtener el nombre completo.
-     * NOTA: las subclases sobreescribirán este método (polimorfismo).
+     * Pista: usa getNombreCompleto() para obtener el nombre completo. NOTA: las
+     * subclases sobreescribirán este método (polimorfismo).
      */
     public void presentarse() {
         // ── ESCRIBE TU CÓDIGO AQUÍ ──────────────────────────────────────────
-
+        System.out.println("Hola, soy " + getNombreCompleto() + "| ID: " + identificacion + "| Edad: " + edad);
     }
 }

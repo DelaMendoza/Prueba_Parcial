@@ -28,7 +28,7 @@ public class Triangulo extends FiguraGeometrica {
     public void setLadoC(double ladoC) { this.ladoC = ladoC; }
 
     /**
-     * TODO #9 — calcularArea() con Fórmula de Herón
+     * TODO #9 — calcularArea() con Fórmula de Herón HECHO
      *
      * Completa este método sobreescrito:
      *   Paso 1: calcula el semiperímetro → s = (ladoA + ladoB + ladoC) / 2.0
@@ -37,7 +37,8 @@ public class Triangulo extends FiguraGeometrica {
     @Override
     public double calcularArea() {
         // ── ESCRIBE TU CÓDIGO AQUÍ ──────────────────────────────────────────
-        return 0;   // ← reemplaza esta línea con los dos pasos indicados
+        double s = (ladoA + ladoB + ladoC) / 2.0;
+        return Math.sqrt(s * (s - ladoA) * (s - ladoB) * (s - ladoC));   // ← reemplaza esta línea con los dos pasos indicados
     }
 
     @Override
@@ -53,6 +54,6 @@ public class Triangulo extends FiguraGeometrica {
         System.out.println("       * *       ");
         System.out.println("      *   *      ");
         System.out.println("     *     *     ");
-        System.out.println("    ***********  ");
+        System.out.println("    *********  ");
     }
 }

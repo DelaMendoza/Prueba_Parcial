@@ -3,7 +3,7 @@ package poo.fundamentos;
 /**
  * TEMA: Herencia — Constructores — Sobreescritura (@Override)
  *
- * Diagrama:  Profesor ──▷ Persona
+ * Diagrama: Profesor ──▷ Persona
  */
 public class Profesor extends Persona {
 
@@ -17,31 +17,50 @@ public class Profesor extends Persona {
     public Profesor() {
         super();
         this.codigoProfesor = "P000";
-        this.departamento   = "Sin departamento";
-        this.titulo         = "Licenciado";
-        this.salario        = 0.0;
+        this.departamento = "Sin departamento";
+        this.titulo = "Licenciado";
+        this.salario = 0.0;
     }
 
     // ── Constructor con parámetros ───────────────────────────────────────────
     public Profesor(String nombre, String apellido, int edad, String identificacion,
-                    String codigoProfesor, String departamento, String titulo, double salario) {
+            String codigoProfesor, String departamento, String titulo, double salario) {
         super(nombre, apellido, edad, identificacion);
         this.codigoProfesor = codigoProfesor;
-        this.departamento   = departamento;
-        this.titulo         = titulo;
-        this.salario        = salario;
+        this.departamento = departamento;
+        this.titulo = titulo;
+        this.salario = salario;
     }
 
     // ── Getters ──────────────────────────────────────────────────────────────
-    public String getCodigoProfesor() { return codigoProfesor; }
-    public String getDepartamento()   { return departamento; }
-    public String getTitulo()         { return titulo; }
-    public double getSalario()        { return salario; }
+    public String getCodigoProfesor() {
+        return codigoProfesor;
+    }
+
+    public String getDepartamento() {
+        return departamento;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public double getSalario() {
+        return salario;
+    }
 
     // ── Setters ──────────────────────────────────────────────────────────────
-    public void setCodigoProfesor(String codigoProfesor) { this.codigoProfesor = codigoProfesor; }
-    public void setDepartamento(String departamento)     { this.departamento = departamento; }
-    public void setTitulo(String titulo)                 { this.titulo = titulo; }
+    public void setCodigoProfesor(String codigoProfesor) {
+        this.codigoProfesor = codigoProfesor;
+    }
+
+    public void setDepartamento(String departamento) {
+        this.departamento = departamento;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
 
     public void setSalario(double salario) {
         if (salario >= 0) {
@@ -57,17 +76,17 @@ public class Profesor extends Persona {
         super.presentarse();   // reutiliza la presentación del padre
         System.out.println("  -> Soy profesor | Codigo: " + codigoProfesor
                 + " | Departamento: " + departamento
-                + " | Titulo: "       + titulo);
+                + " | Titulo: " + titulo);
     }
 
     /**
-     * TODO #5 — calcularSalarioAnual()
+     * TODO #5 — calcularSalarioAnual() HECHO
      *
-     * Completa este método:
-     *   - Retorna el salario mensual multiplicado por 12.
+     * Completa este método: - Retorna el salario mensual multiplicado por 12.
      */
     public double calcularSalarioAnual() {
         // ── ESCRIBE TU CÓDIGO AQUÍ ──────────────────────────────────────────
-        return 0;   // ← reemplaza esta línea con el cálculo correcto
+        double salarioAnual = salario * 12;
+        return salarioAnual;   // ← reemplaza esta línea con el cálculo correcto
     }
 }

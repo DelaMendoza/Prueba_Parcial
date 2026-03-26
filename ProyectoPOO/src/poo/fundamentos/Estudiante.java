@@ -3,7 +3,7 @@ package poo.fundamentos;
 /**
  * TEMA: Herencia — Constructores — Sobreescritura (@Override)
  *
- * Diagrama:  Estudiante ──▷ Persona
+ * Diagrama: Estudiante ──▷ Persona
  */
 public class Estudiante extends Persona {
 
@@ -11,48 +11,69 @@ public class Estudiante extends Persona {
     private String codigoEstudiante;
     private String carrera;
     private double promedio;
-    private int    semestre;
+    private int semestre;
 
     // ── Constructor por defecto ──────────────────────────────────────────────
     public Estudiante() {
         super();
         this.codigoEstudiante = "E000";
-        this.carrera          = "Sin carrera";
-        this.promedio         = 0.0;
-        this.semestre         = 1;
+        this.carrera = "Sin carrera";
+        this.promedio = 0.0;
+        this.semestre = 1;
     }
 
     // ── Constructor con parámetros ───────────────────────────────────────────
     public Estudiante(String nombre, String apellido, int edad, String identificacion,
-                      String codigoEstudiante, String carrera, int semestre) {
+            String codigoEstudiante, String carrera, int semestre) {
         super(nombre, apellido, edad, identificacion);
         this.codigoEstudiante = codigoEstudiante;
-        this.carrera          = carrera;
-        this.semestre         = semestre;
-        this.promedio         = 0.0;   // el promedio siempre inicia en 0
+        this.carrera = carrera;
+        this.semestre = semestre;
+        this.promedio = 0.0;   // el promedio siempre inicia en 0
     }
 
     // ── Getters ──────────────────────────────────────────────────────────────
-    public String getCodigoEstudiante() { return codigoEstudiante; }
-    public String getCarrera()          { return carrera; }
-    public double getPromedio()         { return promedio; }
-    public int    getSemestre()         { return semestre; }
+    public String getCodigoEstudiante() {
+        return codigoEstudiante;
+    }
+
+    public String getCarrera() {
+        return carrera;
+    }
+
+    public double getPromedio() {
+        return promedio;
+    }
+
+    public int getSemestre() {
+        return semestre;
+    }
 
     // ── Setters ──────────────────────────────────────────────────────────────
-    public void setCodigoEstudiante(String codigoEstudiante) { this.codigoEstudiante = codigoEstudiante; }
-    public void setCarrera(String carrera)                   { this.carrera = carrera; }
-    public void setSemestre(int semestre)                    { this.semestre = semestre; }
+    public void setCodigoEstudiante(String codigoEstudiante) {
+        this.codigoEstudiante = codigoEstudiante;
+    }
+
+    public void setCarrera(String carrera) {
+        this.carrera = carrera;
+    }
+
+    public void setSemestre(int semestre) {
+        this.semestre = semestre;
+    }
 
     /**
-     * TODO #3 — setPromedio con validación
+     * TODO #3 — setPromedio con validación HECHO
      *
-     * Completa este setter:
-     *   - Si el promedio está entre 0.0 y 5.0 (inclusive), asígnalo a this.promedio.
-     *   - Si NO es válido, imprime: "Promedio inválido: <valor>"
+     * Completa este setter: - Si el promedio está entre 0.0 y 5.0 (inclusive),
+     * asígnalo a this.promedio. - Si NO es válido, imprime: "Promedio inválido:
+     * valor"
      */
     public void setPromedio(double promedio) {
         // ── ESCRIBE TU CÓDIGO AQUÍ ──────────────────────────────────────────
-
+        if (promedio > 0.0 && promedio <= 5.0) {
+            this.promedio = promedio;
+        }
     }
 
     // ── Sobreescritura (Polimorfismo en tiempo de ejecución) ─────────────────
@@ -60,20 +81,23 @@ public class Estudiante extends Persona {
     public void presentarse() {
         super.presentarse();   // reutiliza la presentación del padre
         System.out.println("  -> Soy estudiante de " + carrera
-                + " | Codigo: "   + codigoEstudiante
+                + " | Codigo: " + codigoEstudiante
                 + " | Semestre: " + semestre
                 + " | Promedio: " + promedio);
     }
 
     /**
-     * TODO #4 — estaAprobado()
+     * TODO #4 — estaAprobado() HECHO
      *
-     * Completa este método:
-     *   - Retorna true  si el promedio es mayor o igual a 3.0.
-     *   - Retorna false en caso contrario.
+     * Completa este método: - Retorna true si el promedio es mayor o igual a
+     * 3.0. - Retorna false en caso contrario.
      */
     public boolean estaAprobado() {
         // ── ESCRIBE TU CÓDIGO AQUÍ ──────────────────────────────────────────
-        return false;   // ← reemplaza esta línea con la condición correcta
+        if (promedio >= 3.0) {
+            return true;
+        } else {
+            return false; // ← reemplaza esta línea con la condición correcta
+        }   
     }
 }
